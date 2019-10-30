@@ -6,7 +6,7 @@
   "author": "Cleverson Puche, Leandro Schmitt & Bruno Machado",
   "dependencies": {
     "bitcodes": [
-      "thrust-bitcodes/jwt",
+      "ozairjr/jwt",
       "thrust-bitcodes/url-parser"
     ],
     "jars": [
