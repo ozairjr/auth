@@ -320,15 +320,16 @@ var Auth = function () {
     }
 
     function extractToken (request, name) {
-        var cookies = request.cookies
-
-        if (cookies) {
+        var cookies = request.cookies || {}
+        var token = cookies[name]
+        if (!token && cookies.length) {
             for (var i = 0; i < cookies.length; i++) {
                 if (cookies[i].getName() === name) {
                     return cookies[i].getValue()
                 }
             }
         }
+        return token
     }
 
     function tryToRefreshToken (params, request, response, token) {
