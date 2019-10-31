@@ -355,6 +355,8 @@ var Auth = function () {
 
         var cookieStr = tknAppName + '=' + serializedToken + ';HttpOnly;path=/;' + secure + expires
 
+        cookieStr = cookieStr.replace(/;([\w])/g, '; $1')
+
         response.addHeader('Set-Cookie', cookieStr)
     }
 
